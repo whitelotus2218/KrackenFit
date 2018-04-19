@@ -3,10 +3,10 @@
 Route::get('/home', function () {
     $users[] = Auth::user();
     $users[] = Auth::guard()->user();
-    $users[] = Auth::guard('admin')->user();
+    $users[] = Auth::guard('atletum')->user();
 
     //dd($users);
 
-    return view('admin.dashboard');
+    return view('atletum.home');
 })->name('home');
 

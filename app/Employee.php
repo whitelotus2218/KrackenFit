@@ -16,7 +16,7 @@ class Employee extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'cargo', 'sueldo', 'horario', 'direccion', 'telefono', 'contrato'
     ];
 
     /**
@@ -25,7 +25,7 @@ class Employee extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 
     ];
 
     /**
@@ -37,5 +37,11 @@ class Employee extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new EmployeeResetPassword($token));
+    }
+    public function estudios(){
+        return $this->hasMany(Estudio::class);
+    }
+    public function rutinas(){
+        return $this->hasMany(Rutina::class);
     }
 }

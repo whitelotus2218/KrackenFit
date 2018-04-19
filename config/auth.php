@@ -36,6 +36,11 @@ return [
     */
 
     'guards' => [
+        'atletum' => [
+            'driver' => 'session',
+            'provider' => 'atleta',
+        ],
+
         'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
@@ -75,6 +80,11 @@ return [
     */
 
     'providers' => [
+        'atleta' => [
+            'driver' => 'eloquent',
+            'model' => App\Atletum::class,
+        ],
+
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
@@ -112,6 +122,12 @@ return [
     */
 
     'passwords' => [
+        'atleta' => [
+            'provider' => 'atleta',
+            'table' => 'atletum_password_resets',
+            'expire' => 60,
+        ],
+
         'admins' => [
             'provider' => 'admins',
             'table' => 'admin_password_resets',

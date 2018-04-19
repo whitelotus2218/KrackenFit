@@ -39,6 +39,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        $this->mapAtletumRoutes();
+
         $this->mapAdminRoutes();
 
         $this->mapEmployeeRoutes();
@@ -81,6 +83,25 @@ class RouteServiceProvider extends ServiceProvider
             'namespace' => $this->namespace,
         ], function ($router) {
             require base_path('routes/admin.php');
+        });
+    }
+
+    /**
+     * Define the "atletum" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapAtletumRoutes()
+    {
+        Route::group([
+            'middleware' => ['web', 'atletum', 'auth:atletum'],
+            'prefix' => 'atletum',
+            'as' => 'atletum.',
+            'namespace' => $this->namespace,
+        ], function ($router) {
+            require base_path('routes/atletum.php');
         });
     }
 
