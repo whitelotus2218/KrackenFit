@@ -1,0 +1,44 @@
+Base de Datos
+
+Una coleccion de informacion de diferentes entidades y que es neceasaria mantener de una manera permanente ya que sera
+utilizada para su procesamiento en sistemas computacionales para una maquina o un equipo realize alguna accion en base
+al resultado de dicho procesamiento. Es por ello que en programacion se requiere el aprender como acceder a los datos de
+dicha base.
+
+La informacion de cada entidad se encuentra almacenada en una tabla la cual contiene un conjunto de datos los cuales esan
+determinadospor la estructura de su registro. Un registro indica cada dato y su tipo que se requiere guardar de la entidad
+una tabla a su vez puede verse como una matriz donde las columnas representan cada dato marcado en el registro y las filas
+representan el conjunto de datos para una instancia particular de la entidad. Desde el punto de vista de programacion 
+cuando la informacion de una entidad se requeria ser almacenada de manera temporal se guardaban en un arreglo de una 
+estructura de datos. Una estructura de datos es un tipo de dato compuesto por diferentes tipos de datos. Las estructuras
+sirvieron de base para las clases ya que una clase esta conformada en parte por un conjunto de atributos que no son otra
+cosa que un conjunto de tipos de datos diferentes.
+
+Ej.
+
+
+Una estructura ademas de ser un tipo de dato compuesto es definido por el programador
+
+
+Dado que los datos en una tabla son manejados midle ware es decir un manejador de base de datos y que existen en el mercado
+varios para que un programa no importando el lenguaje usado en el acceda a estos datos se requiere de un puente (midle ware)
+estos existen y estandarizan la utilizacion de los datos a travez de comunicarse con los diferentes manejadores de bases
+de datos, uno de ellos se conoce como ODBC que se comunica con los diferentes manejadores de BD y programas echos en 
+distintos lenguajes sin embaargo para java en particular se tiene el JDBC que es una api de java para comunicarse con los
+manejadores de BD y lo hace a travez de un software especifico que recibe el nombre de driver el cual hay uno por cada
+manejador de BD para que un programa pueda comunicarse con un manejador de base de datos en especifico debe primero 
+importar en sus librerias el driver correspondiente y tambien la libreria SQL que pertence a la biblioteca de java.
+
+Las operaciones que pueden generarse con una tabla son las siguientes (En ingles se conocen con el nombre de CRUD):
+
+	-Dar de alta un nuevo registro es decir crear una nueva instancia para la tabla en el lenguaje SQL; el cual es 
+utilizado por los manejadores y como todo lenguaje tiene que cumplir con reglas gramaticales tanto sintatica como
+semanticamente que para este lenguaje se le conoce con el comando de insert.
+	
+	-Actualizar los datos de una instancia de la tabla el comando utilizado en SQL es update.
+
+	-La remocion o eliminacion de una instancia en SQL corresponde al comando delate.
+
+
+Para distinguir una instancia en una tabla una de otra debe de tener un dato cuyo valor sea univoco este dato se conoce
+como llave primaria.

@@ -6,7 +6,7 @@
 	<link rel="icon" type="image/png" sizes="96x96" href="{{ asset('/img/favicon.png') }}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Paper Dashboard by Creative Tim</title>
+	<title>KrackenFit CRM</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -37,7 +37,7 @@
 <body>
 
 <div class="wrapper">
-    <div class="sidebar" data-background-color="black" data-active-color="danger">
+    <div class="sidebar" data-background-color="black" data-active-color="info">
 
     <!--
 		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
@@ -47,7 +47,7 @@
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                    Kracken Fit
                 </a>
             </div>
 
@@ -334,7 +334,7 @@
 
         <footer class="footer">
             <div class="container-fluid">
-                <nav class="pull-left">
+                <!--<nav class="pull-left">
                     <ul>
 
                         <li>
@@ -353,9 +353,9 @@
                             </a>
                         </li>
                     </ul>
-                </nav>
+                </nav>-->
                 <div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, hecho con <i class="fa fa-heart heart"></i> por <a href="http://www.facebook.com/mostpeoplecallmechizpa.com">Equipo Dinamita</a>
+                    &copy; <script>document.write(new Date().getFullYear())</script>, hecho con <i class="fa fa-heart heart"></i> por <a href="http://www.facebook.com/mostpeoplecallmechizpa">Equipo Dinamita</a>
                 </div>
             </div>
         </footer>
@@ -368,7 +368,7 @@
 
     <!--   Core JS Files   -->
     <script src="{{ asset('/js/jquery-1.10.2.js') }}" type="text/javascript"></script>
-	<script src="{{ asset('assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
 	<script src="assets/js/bootstrap-checkbox-radio.js"></script>
