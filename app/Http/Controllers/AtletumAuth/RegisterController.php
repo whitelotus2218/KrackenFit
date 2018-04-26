@@ -87,6 +87,6 @@ class RegisterController extends Controller
      */
     protected function guard()
     {
-        return Auth::guard('atletum');
+        return Auth::guard('admin');
     }
 }

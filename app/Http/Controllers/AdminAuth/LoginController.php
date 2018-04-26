@@ -23,13 +23,18 @@ class LoginController extends Controller
     use AuthenticatesUsers, LogsoutGuard {
         LogsoutGuard::logout insteadof AuthenticatesUsers;
     }
+    public function myDash()
+    {
+        $admin = Admin::find(Auth::id());
+        return view('home',compact('admin'));
+    }   
 
     /**
      * Where to redirect users after login / registration.
      *
      * @var string
      */
-    public $redirectTo = '/admin/dashboard/';
+    public $redirectTo = '/admin/home/';
 
     /**
      * Create a new controller instance.

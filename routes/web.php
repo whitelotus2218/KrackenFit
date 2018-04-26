@@ -12,11 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/welcome');
 });
-Route::get('/admin', function() {
-    return view('admin/dashboard');
-});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -34,32 +33,17 @@ Route::group(['prefix' => 'employee'], function () {
   Route::get('/password/reset', 'EmployeeAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
   Route::get('/password/reset/{token}', 'EmployeeAuth\ResetPasswordController@showResetForm');
 });
-//Rutas de Administrador
-Route::group(['prefix' => 'admin'], function () {
-  Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('login');
-  Route::post('/login', 'AdminAuth\LoginController@login');
-  Route::post('/logout', 'AdminAuth\LoginController@logout')->name('logout');
-
-  Route::get('/register', 'AdminAuth\RegisterController@showRegistrationForm')->name('register');
-  Route::post('/register', 'AdminAuth\RegisterController@register');
-
-  Route::post('/password/email', 'AdminAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
-  Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
-  Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
-  Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
 
 
-});
-
-Route::get('/admin/dashboard', function() {
+/*Route::get('/admin/dashboard', function() {
     return view('admin/dashboard');
-});
-Route::get('/admin/registrarEmpleado', function() {
+});*/
+/*Route::get('/admin/registrarEmpleado', function() {
     return view('admin/registrarEmpleado');
-});
-Route::get('/admin/registrarAtleta', function() {
+});*/
+/*Route::get('/admin/registrarAtleta', function() {
     return view('admin/registrarAtleta');
-});
+});*/
 
 //Rutas de atleta
 Route::group(['prefix' => 'atletum'], function () {
@@ -74,4 +58,25 @@ Route::group(['prefix' => 'atletum'], function () {
   Route::post('/password/reset', 'AtletumAuth\ResetPasswordController@reset')->name('password.email');
   Route::get('/password/reset', 'AtletumAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
   Route::get('/password/reset/{token}', 'AtletumAuth\ResetPasswordController@showResetForm');
+});
+//Rutas de Administrador
+Route::group(['prefix' => 'admin'], function () {
+  Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('login');
+  Route::post('/login', 'AdminAuth\LoginController@login');
+  Route::post('/logout', 'AdminAuth\LoginController@logout')->name('logout');
+
+  Route::get('/register', 'AdminAuth\RegisterController@showRegistrationForm')->name('register');
+  Route::post('/register', 'AdminAuth\RegisterController@register');
+
+  Route::post('/password/email', 'AdminAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
+  Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
+  Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+  Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
+  Route::get('/dashboard/{id}','AdminAuth\LoginController@myDash');
+  //Registro de Atleta
+  Route::get('/registrarAtleta','userController@create')->name('registrarAtleta');
+  Route::post('/registrarAtleta','userController@store');
+  //Registro de Empleado
+  //Route::get('/registrarEmpleado', 'employeeController@create')->name('registrarEmpleado');
+  //Route::post('/registrarEmpleado','employeeController@store');
 });

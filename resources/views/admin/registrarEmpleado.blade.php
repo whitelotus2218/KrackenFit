@@ -51,8 +51,13 @@
                                 @endif
                             </div>
                         </div>
-
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="horarioEntrada" class="col-md-4 control-label">Hora de entrada</label>
+                            <div class="col-md-6">
+                                <input type="time" id="horarioEntrada" class="form-control" name="horarioEntrada">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="password-confirm" class="col-md-4 control-label">Confirmar Password</label>
 
                             <div class="col-md-6">
@@ -79,6 +84,7 @@
         </div>
     </div>
 </div>       
-    </div>
+</div>
+
 @endsection
         

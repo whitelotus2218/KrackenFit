@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\dashContoller;
 
 class RegisterController extends Controller
 {
@@ -23,11 +24,7 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    /**
-     * Where to redirect users after login / registration.
-     *
-     * @var string
-     */
+    
     protected $redirectTo = '/admin/home';
 
     /**

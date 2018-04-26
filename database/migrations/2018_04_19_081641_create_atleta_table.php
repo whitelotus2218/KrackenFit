@@ -15,11 +15,11 @@ class CreateAtletaTable extends Migration
         Schema::create('atleta', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->integer('genero')->nullable();
+            $table->integer('genero')->nullable(); //0 masculino 1 femenino
             $table->date('cumpleaños')->nullable();
-            $table->integer('telefono')->nullable();
+            $table->string('telefono')->nullable();
+            $table->string('email')->unique();
+            $table->string('password'); 
             $table->integer('estudio_id')->nullable();
             $table->integer('rutina_id')->nullable();
             $table->rememberToken();

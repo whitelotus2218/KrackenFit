@@ -24,37 +24,36 @@
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="{{ asset('/css/demo.css') }}" rel="stylesheet" />
-
-
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!--  Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
-    <link href="{{ asset('/ccs/themify-icons.css') }}" rel="stylesheet">
+    
     <!--FontAwesome-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!--   Core JS Files   -->
     <script src="{{ asset('/js/jquery-1.10.2.js') }}" type="text/javascript"></script>
     <script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
-    <!--  Checkbox, Radio & Switch Plugins -->
+    <!--  Checkbox, Radio & Switch Plugins 
     <script src="assets/js/bootstrap-checkbox-radio.js"></script>
 
-    <!--  Charts Plugin -->
+    <!--  Charts Plugin 
     <script src="assets/js/chartist.min.js"></script>
 
-    <!--  Notifications Plugin    -->
-    <script src="assets/js/bootstrap-notify.js"></script>
+    <!--  Notifications Plugin    
+    <script src="assets/js/bootstrap-notify.js"></script>-->
 
     <!--  Google Maps Plugin    -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
-    <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
+    <!-- Paper Dashboard Core javascript and methods for Demo purpose 
     <script src="assets/js/paper-dashboard.js"></script>
 
-    <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-    <script src="assets/js/demo.js"></script>
+     Paper Dashboard DEMO methods, don't include it in your project! 
+    <script src="assets/js/demo.js"></script>-->
 
 
 </head>
@@ -77,26 +76,26 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="{{ url('/admin/dashboard') }}">
-                        <i class="ti-panel"></i>
+                    <a href="{{ url('/admin/home') }}">
+                        <i class="fas fa-chart-line"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
                     <a href="user.html">
-                        <i class="ti-user"></i>
+                        <i class="fa fa-user"></i>
                         <p>Perfil</p>
                     </a>
                 </li>
                 <li>
                     <a href="{{ url('/admin/registrarAtleta') }}">
-                        <i class="ti-user"></i>
+                        <i class="fa fa-user-plus"></i>
                         <p>Nuevo atleta</p>
                     </a>
                 </li>
                 <li>
                     <a href="{{url('/admin/registrarEmpleado') }}">
-                        <i class="ti-user"></i>
+                        <i class="fa fa-user-plus"></i>
                         <p>Nuevo Empleado</p>
                     </a>
                 </li>
@@ -133,14 +132,14 @@
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="ti-bell"></i>
-                                    <p>Administrador</p>
+                                    <p>{{ Auth::user() }}</p>
                                     <b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">
-                                <a href="{{ url('/admin/logout') }}" onclick="event.preventDefault();
+                                <a href="{{ url('/logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 Cerrar Sesión </a>
-                                <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>                               
                               </ul>
@@ -192,26 +191,6 @@
 
 
 </body>
-
-    
-    <script type="text/javascript">
-        $(document).ready(function(){
-
-            demo.initChartist();
-
-            $.notify({
-                icon: 'ti-gift',
-                message: "Welcome to <b>Paper Dashboard</b> - a beautiful Bootstrap freebie for your next project."
-
-            },{
-                type: 'success',
-                timer: 4000
-            });
-
-        });
-
-        
-    </script>
     
 </html>
                                  
