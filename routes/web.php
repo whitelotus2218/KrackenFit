@@ -77,6 +77,6 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('/registrarAtleta','userController@create')->name('registrarAtleta');
   Route::post('/registrarAtleta','userController@store');
   //Registro de Empleado
-  //Route::get('/registrarEmpleado', 'employeeController@create')->name('registrarEmpleado');
-  //Route::post('/registrarEmpleado','employeeController@store');
+  Route::get('/registrarEmpleado', 'employeeController@create')->name('registrarEmpleado');
+  Route::post('/registrarEmpleado','employeeController@store');
 });

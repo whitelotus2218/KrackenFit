@@ -10,7 +10,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group">
-                            <label for="name" class="col-md-4 control-label"><i class="fa fa-user-circle"></i> Nombre</label>
+                            <label for="name" class="col-md-4 control-label"><i class="fa fa-user-circle"></i> Nombre Completo</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="nombreAtleta" required="true">

@@ -10,31 +10,28 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/employee/register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Nombre Completo</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
+                                <input id="name" type="text" class="form-control" name="name">
                             </div>
                         </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group label-floating">
+                            <label class="control-label col-md-4"><i class="fa fa-mars"></i> Género</label>
+                            <div class="col-md-6">
+                                <select class="form-control" name="cargo" required="true">
+                                    <option disabled="" selected=""></option>
+                                    <option value="0">Entrenador</option>
+                                    <option value="1">Nutriologo/a</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="email" class="col-md-4 control-label">E-Mail</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                                <input id="email" type="email" class="form-control" name="email">
                             </div>
                         </div>
 
