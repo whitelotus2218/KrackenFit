@@ -3,20 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Atletum;
-use App\Admin;
+use app\Admin;
 use Auth;
 
-class userController extends Controller
+class profileController extends Controller
 {
-    
-
-    
     /**
-     * Where to redirect users after login / registration.
+     * Display a listing of the resource.
      *
-     * @var string
+     * @return \Illuminate\Http\Response
      */
+    public function perfilAdministrador()
+    {
+        $admin = Admin::find(Auth::id());
+        return view('admin.perfil',compact('admin'));
+    }   
+    
+    public function registrarEmpleado()
+    {
+        $admin = Admin::find(Auth::id());
+        return view('admin.registrarEmpleado',compact('admin'));
+    }   
+    public function registrarAtleta()
+    {
+        $admin = Auth::user();
+        return view('admin/registrarAtleta',compact('admin'));
+    }  
     public function index()
     {
         //
@@ -29,7 +41,7 @@ class userController extends Controller
      */
     public function create()
     {
-        return view('admin.registrarAtleta');
+        //
     }
 
     /**
@@ -40,19 +52,7 @@ class userController extends Controller
      */
     public function store(Request $request)
     {
-        $atleta = new Atletum;
-        $atleta->name = $request->nombreAtleta;
-        $atleta->email = $request->emailAtleta;
-        $atleta->password = $request->passwordAtleta;
-        $atleta->cumpleaños = $request->cumpleaños;
-        $atleta->telefono = $request->telefono;
-        $atleta->rutina_id = $request->rutinaId;
-        $atleta->estudio_id = $request->estudioId;
-        $atleta->genero = $request->genero; 
-        $atleta->admin_id = Auth::id();
-
-        $atleta->save(); 
-        return redirect('/admin/registrarAtleta');
+        //
     }
 
     /**

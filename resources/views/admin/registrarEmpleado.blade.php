@@ -1,13 +1,12 @@
 @extends('admin.layout.main')
 @section('content')
-    <div class="content">
-        <div class="container">
+        <div class="container-fluid">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Registro</div>
+                <div class="panel-heading">Registrar Empleado</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('registrarEmpleado') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('admin/registrarEmpleado') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group">
@@ -46,7 +45,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="horario" class="col-md-4 control-label"><i class="fa fa-stopwatch"></i>Horario</label>
+                            <label for="horario" class="col-md-4 control-label"><i class="ti-alarm-clock"></i>Horario</label>
                             <div class="col-md-6">
                                 <label>De: </label>
                                 <input type="time" id="horarioEntrada" class="form-control" name="horarioEntrada">
@@ -97,8 +96,7 @@
             </div>
         </div>
     </div>
-</div>       
-</div>
+</div>  
 
 @endsection
         

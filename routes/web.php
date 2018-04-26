@@ -72,11 +72,7 @@ Route::group(['prefix' => 'admin'], function () {
   Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
   Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
   Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
-  Route::get('/dashboard/{id}','AdminAuth\LoginController@myDash');
-  //Registro de Atleta
-  Route::get('/registrarAtleta','userController@create')->name('registrarAtleta');
-  Route::post('/registrarAtleta','userController@store');
-  //Registro de Empleado
-  Route::get('/registrarEmpleado', 'employeeController@create')->name('registrarEmpleado');
-  Route::post('/registrarEmpleado','employeeController@store');
+  //Route::get('/dashboard/{id}','profileController@dashboardAdministrador');
+  
+  
 });

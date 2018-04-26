@@ -75,16 +75,16 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
-                    <a href="{{ url('/admin/home') }}">
-                        <i class="fas fa-chart-line"></i>
+                <li>
+                    <a href="{{ url('/admin/dashboard') }}">
+                        <i class="fa fa-align-justify"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
+                    <a href="{{ url('/admin/perfil') }}">
                         <i class="fa fa-user"></i>
-                        <p>Perfil</p>
+                        <p>Editar Perfil</p>
                     </a>
                 </li>
                 <li>
@@ -94,7 +94,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{url('/admin/registrarEmpleado') }}">
+                    <a href="{{ url('/admin/registrarEmpleado') }}">
                         <i class="fa fa-user-plus"></i>
                         <p>Nuevo Empleado</p>
                     </a>
@@ -132,7 +132,7 @@
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="ti-bell"></i>
-                                    <p>{{ Auth::user() }}</p>
+                                    <p>{{ Auth::user()->name }}</p>
                                     <b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">

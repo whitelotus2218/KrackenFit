@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
+use App\Admin;
 
 class RegisterController extends Controller
 {
@@ -89,4 +90,5 @@ class RegisterController extends Controller
     {
         return Auth::guard('admin');
     }
+     
 }

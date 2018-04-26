@@ -25,7 +25,7 @@ class Atletum extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'estudio_id', 'rutina_id',
+        'password', 'remember_token', 'estudio_id', 'rutina_id', 'admin_id',
     ];
 
     /**

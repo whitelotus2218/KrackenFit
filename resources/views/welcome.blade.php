@@ -70,7 +70,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Kracken Fit
                 </div>
 
                 <div class="links">
