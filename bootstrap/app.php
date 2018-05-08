@@ -41,6 +41,16 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+$app->providers(
+	Khill\Lavacharts\Laravel\LavachartsServiceProvider::class
+);
+
+$app->aliases(
+	'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class
+
+);
+
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
