@@ -3,7 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+//models
 use app\Admin;
+//use app\Atletum;
+use app\Employee;
+use app\Ejercicio;
+use app\Estudio;
+use app\rutina;
+//Fecades
 use Auth;
 
 class profileController extends Controller
@@ -13,9 +21,16 @@ class profileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function contenidoDashboard(){        
+                
+        $contadorDeAtletas =  Auth::user()->atletas()->count();
+
+        return view('admin.dashboard',compact('contadorDeAtletas'));
+    }
     public function perfilAdministrador()
     {
         $admin = Admin::find(Auth::id());
+
         return view('admin.perfil',compact('admin'));
     }   
     
@@ -31,14 +46,25 @@ class profileController extends Controller
     }  
     public function index()
     {
-        //
+        $atleta = collect(Admin::find(Auth::id())->atletas);
+        return view('admin.suscriptores',compact('atleta'));
     }
-
+    public function mostrarEmpleados(){
+        $empleado = Admin::find(Auth::id())->empleados;
+        //return $empleado;
+        return view('admin.empleados',compact('empleado'));
+    }
+    /*public function mostrarCoach(){
+        $coach = Admin::find(Auth::id())->empleados;
+        //return $coach;
+        return view('admin.',compact('coach'));
+    }*/
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function create()
     {
         //

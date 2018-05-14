@@ -38,4 +38,10 @@ class Admin extends Authenticatable
     {
         $this->notify(new AdminResetPassword($token));
     }
+    public function atletas(){
+        return $this->hasMany(Atletum::class);
+    }
+    public function empleados(){
+        return $this->hasMany(Employee::class);
+    }
 }

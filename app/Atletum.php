@@ -44,4 +44,10 @@ class Atletum extends Authenticatable
     public function estudios(){
         return $this->hasMany(Estudio::class);
     }
+    public function admin(){
+        return $this->belongsTo(Admin::class);
+    }
+    public function coach(){
+        return $this->belongsTo(Employee::class);
+    }
 }

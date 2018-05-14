@@ -32,4 +32,7 @@ class User extends Authenticatable
     public function estudios(){
         return $this->hasMany(Estudio::class);
     }
+    public function admins(){
+        return $this->belongsTo(Admin::class);
+    }
 }

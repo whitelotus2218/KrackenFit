@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('/img/apple-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('/img/favicon.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('/img/kracken.jpg') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('/img/kracken.jpg') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>KrackenFit CRM</title>
+    <title>KrackenFit CRM | {{Auth::user()->name}}</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -100,17 +100,18 @@
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
-                        <i class="ti-view-list-alt"></i>
+                    <a href="{{ url('/admin/suscriptores') }}">
+                        <i class="fa fa-list-ul"></i>
                         <p>Suscriptores</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
-                        <i class="ti-text"></i>
-                        <p>Balances</p>
+                    <a href="{{ url('/admin/empleados') }}">
+                        <i class="fa fa-list-ul"></i>
+                        <p>Empleados</p>
                     </a>
                 </li>
+                
             </ul>
         </div>
     </div>
@@ -125,7 +126,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Tengo que cambiar esto</a>
+                    <a class="navbar-brand" href="#"></a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">

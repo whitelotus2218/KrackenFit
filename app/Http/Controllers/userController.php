@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Atletum;
 use App\Admin;
@@ -27,6 +28,15 @@ class userController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:atleta',
+            'password' => 'required|min:6|confirmed',
+        ]);
+    }
+
     public function create()
     {
         return view('admin.registrarAtleta');
@@ -41,6 +51,11 @@ class userController extends Controller
     public function store(Request $request)
     {
         $atleta = new Atletum;
+
+        $this->validate($request, [
+            'email' => 'unique:atleta',
+        ]);
+
         $atleta->name = $request->nombreAtleta;
         $atleta->email = $request->emailAtleta;
         $atleta->password = $request->passwordAtleta;

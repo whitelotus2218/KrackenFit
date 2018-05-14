@@ -8,7 +8,16 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/registrarAtleta') }}">
                         {{ csrf_field() }}
-
+                        @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                        @endif
+            
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label"><i class="fa fa-user-circle"></i> Nombre Completo</label>
 
@@ -38,11 +47,12 @@
                                 <input type="number" name="telefono" class="form-control" maxlength="10" />  
                             </div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="email" class="col-md-4 control-label"><i class="fa fa-at"></i>E-Mail</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="emailAtleta" required="true">
+                                <input id="email" type="email" class="form-control" name="emailAtleta">
                             </div>
                         </div>
 
@@ -65,9 +75,13 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
+
                                 <button href="/home" type="submit" class="btn btn-danger">
                                     Continuar
                                 </button>
+                                <div>
+                            
+                        </div>  
                             </div>
                         </div>
                     </form>

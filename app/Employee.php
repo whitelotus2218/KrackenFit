@@ -25,7 +25,7 @@ class Employee extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 
+        'password', 'remember_token', 'admin_id', 'employee_id', 
     ];
 
     /**
@@ -43,5 +43,11 @@ class Employee extends Authenticatable
     }
     public function rutinas(){
         return $this->hasMany(Rutina::class);
+    }
+    public function admin(){
+        return $this->belongsTo(Admin::class);
+    }
+    public function atletas(){
+        return $this->hasMany(Atletum::class);
     }
 }

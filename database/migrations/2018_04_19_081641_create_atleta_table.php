@@ -23,6 +23,7 @@ class CreateAtletaTable extends Migration
             $table->integer('estudio_id')->nullable();
             $table->integer('rutina_id')->nullable();
             $table->integer('admin_id');
+            $table->integer('employee_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

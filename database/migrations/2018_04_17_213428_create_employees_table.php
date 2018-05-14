@@ -24,6 +24,7 @@ class CreateEmployeesTable extends Migration
             $table->string('direccion');
             $table->string('telefono')->nullable();
             $table->string('contrato');
+            $table->integer('admin_id');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Employee;
+use Auth;
 
 class employeeController extends Controller
 {
@@ -46,6 +47,8 @@ class employeeController extends Controller
         $empleado->direccion = $request->direccionEmpleado;
         $empleado->telefono = $request->telefonoEmpleado;
         $empleado->contrato = $request->contratoEmpleado;
+        $empleado->admin_id = Auth::id();
+        $empleado->employee_id = $request->idEmpleado;
         $empleado->save();
         return redirect('/admin/registrarEmpleado');
     }

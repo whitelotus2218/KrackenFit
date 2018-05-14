@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Http\Controllers\AtletumAuth;
-
+//Models
 use App\Atletum;
-use Validator;
+use App\Admin;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
-use App\Admin;
+
+//Fecades
+use Validator;
 
 class RegisterController extends Controller
 {
@@ -54,6 +57,7 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255|unique:atleta',
             'password' => 'required|min:6|confirmed',
         ]);
+        
     }
 
     /**
