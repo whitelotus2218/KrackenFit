@@ -38,10 +38,10 @@ class LoginController extends Controller
     }if (auth()->user()->hasRole('atleta')) 
     {
         
-        return redirect('/atletum/home')
+        return redirect('/atletum/dashboard')
     }
 
-    return redirect('/employee/home');
+    return redirect('/employee/dashboard');
     
     }
     /*public $redirectTo = '/atletum/home';
