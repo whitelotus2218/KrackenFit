@@ -39,7 +39,7 @@ class LoginController extends Controller
     }if (auth()->user()->hasRole('atleta')) 
     {
         
-        return redirect('/atleta/dashboard')
+        return redirect('/atletum/dashboard')
     }
 
     return redirect('/employee/dashboard');
